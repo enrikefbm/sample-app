@@ -13,12 +13,12 @@ echo "RUN pip install flask" >> tempdir/Dockerfile
 #echo "COPY  ./static /home/myapp/static/" >> tempdir/Dockerfile
 echo "COPY  ./templates /home/myapp/templates/" >> tempdir/Dockerfile
 echo "COPY  app.py /home/myapp/" >> tempdir/Dockerfile
-echo "EXPOSE 9999" >> tempdir/Dockerfile
+echo "EXPOSE 8888" >> tempdir/Dockerfile
 echo "CMD python3 /home/myapp/app.py" >> tempdir/Dockerfile
 
 cd tempdir
 
 docker build -t myapp .
 
-docker run -t -d -p 9999:9999 --name myapprunning myapp
+docker run -t -d -p 8888:8888 --name myapprunning myapp
 docker ps -a
