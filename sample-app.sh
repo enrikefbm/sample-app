@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir tempdir
-mkdir tempdir/templates
+mkdir -p tempdir
+mkdir -p tempdir/templates
 #mkdir tempdir/static
 
 cp app.py tempdir/.
@@ -19,6 +19,5 @@ echo "CMD python3 /home/myapp/app.py" >> tempdir/Dockerfile
 cd tempdir
 
 docker build -t myapp .
-
 docker run -t -d -p 8888:8888 --name myapprunning myapp
 docker ps -a
