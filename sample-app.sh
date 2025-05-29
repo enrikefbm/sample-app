@@ -19,5 +19,6 @@ echo "CMD python3 /home/myapp/app.py" >> tempdir/Dockerfile
 cd tempdir
 
 docker build -t myapp .
+docker rm -f myapprunning
 docker run -t -d -p 8888:8888 --name myapprunning myapp
 docker ps -a
